@@ -233,11 +233,11 @@ def bl_parse_stats(parsed, mode="quickplay"):
 
     if not "games" in built_dict["overall_stats"]:
         # manually calculate it
-        dmg_done = built_dict["game_stats"]["damage_done"]
-        avg_dmgd = built_dict["average_stats"]["damage_done_avg"]
+        elim_done = built_dict["game_stats"]["eliminations"]
+        avg_elim = built_dict["average_stats"]["eliminations_avg"]
 
         # IT RETURNS
-        games = int(dmg_done // avg_dmgd)
+        games = int(elim_done // avg_elim)
 
         losses = games - built_dict["overall_stats"]["wins"]
         built_dict["overall_stats"]["games"] = games
